@@ -29,8 +29,8 @@
                     app:layout_constraintHorizontal_bias="0.473"/>
 
             <android.support.constraint.ConstraintLayout
-                    android:layout_width="300dp"
-                    android:layout_height="325dp"
+                    android:layout_width="290dp"
+                    android:layout_height="wrap_content"
                     android:background="@drawable/custom_layout_shape"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent" android:id="@+id/constraintLayout"
@@ -50,25 +50,26 @@
                         android:id="@+id/subLabel"
                         android:textSize="24sp"
                         app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="10dp"
+                        app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="5dp"
                         app:layout_constraintHorizontal_bias="0.0"/>
                 <EditText
                         android:hint="@string/gradeHint"
                         android:layout_width="230dp"
                         android:layout_height="wrap_content"
-                        android:textSize="15sp"
+                        android:textSize="14sp"
                         android:id="@+id/subGrades"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="10dp"
-                        app:layout_constraintTop_toBottomOf="@+id/subLabel"/>
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/subLabel"
+                        app:layout_constraintBottom_toTopOf="@+id/labLabel"/>
                 <Button
                         android:text="@string/calculateBtn"
                         android:background="@drawable/custom_button"
                         android:elevation="10dp"
                         android:textColor="@color/buttonTextColor"
-                        android:textSize="14sp"
-                        android:layout_width="128dp"
-                        android:layout_height="36dp" android:id="@+id/calculateBtn"
+                        android:textSize="12sp"
+                        android:layout_width="116dp"
+                        android:layout_height="32dp" android:id="@+id/calculateBtn"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textViewCGPA"
@@ -86,29 +87,30 @@
                         android:id="@+id/labLabel"
                         android:textSize="24sp"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="20dp"
-                        app:layout_constraintTop_toBottomOf="@+id/subGrades"/>
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/subGrades"
+                        app:layout_constraintBottom_toTopOf="@+id/labGrades"/>
                 <EditText
                         android:hint="@string/gradeHint"
                         android:layout_width="230dp"
                         android:layout_height="wrap_content"
-                        android:textSize="15sp"
+                        android:textSize="14sp"
                         android:id="@+id/labGrades"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/labLabel"
-                />
+                        app:layout_constraintBottom_toTopOf="@+id/textViewCGPA"/>
                 <TextView
                         android:hint="@string/cgpaHint"
                         android:textColor="@color/cgpaColor"
                         android:textAlignment="center"
                         android:layout_width="246dp"
                         android:layout_height="wrap_content" android:id="@+id/textViewCGPA"
-                        android:textSize="56sp"
+                        android:textSize="50sp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/labGrades"
-                        android:layout_marginBottom="3dp" app:layout_constraintBottom_toTopOf="@+id/calculateBtn"/>
+                        app:layout_constraintBottom_toTopOf="@+id/calculateBtn" android:layout_marginBottom="5dp"/>
             </android.support.constraint.ConstraintLayout>
 
         </android.support.constraint.ConstraintLayout>

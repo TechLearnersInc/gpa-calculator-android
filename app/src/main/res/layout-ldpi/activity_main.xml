@@ -24,17 +24,18 @@
                     android:id="@+id/imageView"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="5dp"
-                    android:layout_marginBottom="10dp" app:layout_constraintBottom_toTopOf="@+id/constraintLayout"/>
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginBottom="5dp" app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+                    android:layout_marginTop="5dp"/>
 
             <android.support.constraint.ConstraintLayout
-                    android:layout_width="300dp"
-                    android:layout_height="310dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:background="@drawable/custom_layout_shape"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent" android:id="@+id/constraintLayout"
                     app:layout_constraintTop_toBottomOf="@+id/imageView"
-                    android:layout_marginTop="10dp">
+                    android:layout_marginTop="5dp">
 
                 <EditText
                         android:layout_width="wrap_content"
@@ -47,19 +48,19 @@
                         android:textAlignment="center"
                         android:ems="10"
                         android:id="@+id/subLabel"
-                        android:textSize="24sp"
+                        android:textSize="23sp"
                         app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="10dp"
-                        android:layout_marginBottom="5dp" app:layout_constraintBottom_toTopOf="@+id/subGrades"/>
+                        app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="5dp"
+                        app:layout_constraintBottom_toTopOf="@+id/subGrades"/>
                 <EditText
                         android:hint="@string/gradeHint"
                         android:layout_width="236dp"
-                        android:layout_height="41dp"
+                        android:layout_height="wrap_content"
                         android:id="@+id/subGrades"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/subLabel" android:textSize="12sp"
-                        app:layout_constraintHorizontal_bias="0.488" android:layout_marginBottom="11dp"
+                        app:layout_constraintHorizontal_bias="0.488" android:layout_marginBottom="5dp"
                         app:layout_constraintBottom_toTopOf="@+id/labLabel"/>
                 <Button
                         android:text="@string/calculateBtn"
@@ -67,11 +68,11 @@
                         android:elevation="10dp"
                         android:textColor="@color/buttonTextColor"
                         android:textSize="12sp"
-                        android:layout_width="121dp"
-                        android:layout_height="33dp" android:id="@+id/calculateBtn"
+                        android:layout_width="111dp"
+                        android:layout_height="30dp" android:id="@+id/calculateBtn"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.496" android:layout_marginBottom="15dp"
+                        app:layout_constraintHorizontal_bias="0.496" android:layout_marginBottom="5dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textViewCGPA"/>
                 <EditText
@@ -85,31 +86,31 @@
                         android:textAlignment="center"
                         android:ems="10"
                         android:id="@+id/labLabel"
-                        android:textSize="24sp"
+                        android:textSize="23sp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/subGrades"
                         app:layout_constraintHorizontal_bias="0.518"
-                        android:layout_marginTop="10dp"/>
+                />
                 <EditText
                         android:hint="@string/gradeHint"
                         android:layout_width="236dp"
-                        android:layout_height="41dp" android:id="@+id/labGrades"
+                        android:layout_height="wrap_content" android:id="@+id/labGrades"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="5dp"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/labLabel" android:textSize="12sp"
                         app:layout_constraintBottom_toTopOf="@+id/textViewCGPA"/>
                 <TextView
                         android:hint="@string/cgpaHint"
                         android:textColor="@color/cgpaColor"
                         android:textAlignment="center"
-                        android:layout_width="231dp"
-                        android:layout_height="78dp" android:id="@+id/textViewCGPA"
-                        android:textSize="60sp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" android:id="@+id/textViewCGPA"
+                        android:textSize="50sp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/labGrades"
-                        android:layout_marginBottom="5dp" app:layout_constraintBottom_toTopOf="@+id/calculateBtn"/>
+                        app:layout_constraintBottom_toTopOf="@+id/calculateBtn"/>
             </android.support.constraint.ConstraintLayout>
 
         </android.support.constraint.ConstraintLayout>
