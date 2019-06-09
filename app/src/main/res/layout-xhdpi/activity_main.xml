@@ -20,11 +20,11 @@
             <ImageView
                     android:src="@drawable/header"
                     android:layout_width="match_parent"
-                    android:layout_height="112dp"
+                    android:layout_height="120dp"
                     android:id="@+id/imageView"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="20dp"
+                    app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
                     app:layout_constraintHorizontal_bias="0.473"/>
 
@@ -35,7 +35,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent" android:id="@+id/constraintLayout"
                     app:layout_constraintHorizontal_bias="0.488" app:layout_constraintTop_toBottomOf="@+id/imageView"
-                    android:layout_marginTop="20dp" app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginTop="10dp" app:layout_constraintBottom_toBottomOf="parent"
                     android:layout_marginBottom="20dp">
 
                 <EditText

@@ -20,12 +20,11 @@
             <ImageView
                     android:src="@drawable/header"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="140dp"
                     android:id="@+id/imageView"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    android:layout_marginTop="15dp"
                     app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
                     app:layout_constraintHorizontal_bias="0.473"/>
 
@@ -37,10 +36,10 @@
                     app:layout_constraintEnd_toEndOf="parent" android:id="@+id/constraintLayout"
                     app:layout_constraintHorizontal_bias="0.488" app:layout_constraintTop_toBottomOf="@+id/imageView"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="15dp"
-                    android:layout_marginBottom="15dp">
+                    android:layout_marginBottom="10dp">
 
                 <EditText
                         android:layout_width="wrap_content"
@@ -118,3 +117,4 @@
     </ScrollView>
 
 </LinearLayout>
+

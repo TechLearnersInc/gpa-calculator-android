@@ -5,4 +5,6 @@
     <string name="calculateBtn">Calculate</string>
     <string name="gradeHint">Use comma for seperation</string>
     <string name="cgpaHint">CGPA</string>
+    <string name="edit_sheet_menu_item">Edit Sheet</string>
+    <string name="about_menu_item">About</string>
 </resources>
