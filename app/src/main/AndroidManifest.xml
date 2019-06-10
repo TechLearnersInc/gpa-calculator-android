@@ -28,7 +28,8 @@
                 android:name=".AboutActivity"
                 android:label="@string/about_activity_label"
                 android:screenOrientation="portrait"
-                android:windowSoftInputMode="stateVisible|adjustPan">
+                android:parentActivityName=".MainActivity"
+                android:windowSoftInputMode="stateVisible|adjustPan" tools:targetApi="jelly_bean">
         </activity>
 
         <!-- Edit Sheet Activity -->
@@ -36,7 +37,8 @@
                 android:name=".EditSheetActivity"
                 android:label="@string/edit_sheet_activity_label"
                 android:screenOrientation="portrait"
-                android:windowSoftInputMode="stateVisible|adjustPan">
+                android:parentActivityName=".MainActivity"
+                android:windowSoftInputMode="stateVisible|adjustPan" tools:targetApi="jelly_bean">
         </activity>
 
     </application>
