@@ -9,4 +9,5 @@
     <string name="cgpaHint">CGPA</string>
     <string name="edit_sheet_menu_item">Edit Sheet</string>
     <string name="about_menu_item">About</string>
+    <string name="exit_menu_item">Exit</string>
 </resources>
