@@ -11,6 +11,9 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
+    private var dbVersion: Int? = null
+    private var dbManager: DbManager? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         // Main
         super.onCreate(savedInstanceState)
@@ -18,6 +21,10 @@ class MainActivity : AppCompatActivity() {
 
         // Buttons Functions
         this.Button_Functions()
+
+        // Database
+        this.dbVersion = 1
+        this.dbManager = DbManager(applicationContext, dbVersion!!)
     }
 
     // Adding three dot navigation menu to this activity
