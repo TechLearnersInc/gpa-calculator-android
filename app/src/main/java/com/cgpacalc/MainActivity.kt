@@ -28,10 +28,13 @@ class MainActivity : AppCompatActivity() {
         this.dbManager = DbManager(applicationContext, dbVersion!!)
         val x: HashMap<String, Float> = this.dbManager!!.readDataToHashMap()
 
-        for(key in x.keys){
-            //println("Element at key $key = ${data[key]}")
-            Log.i("FARIA","Element at key $key = ${x[key]}")
-        }
+        this.dbManager!!.updateData("A+", "96")
+
+        /**
+         * for(key in x.keys){
+         *    Log.i("FARIA","Element at key $key = ${x[key]}")
+         * }
+         */
 
 
     }

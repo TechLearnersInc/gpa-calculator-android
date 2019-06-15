@@ -1,5 +1,6 @@
 package com.cgpacalc
 
+import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
@@ -11,8 +12,8 @@ class DbManager(context: Context, version: Int) {
     val dbName: String = "MyDatabase"
     val dbVersion: Int = version
     val dbTable: String = "MyTable"
-    val colGrade: String = "KEY"
-    val colGPA: String = "VALUE"
+    val colGrade: String = "grade"
+    val colGPA: String = "gpa"
     private val colID: String = "ID"
     val sqlCreateTable: String = """
         CREATE TABLE $dbTable (
@@ -20,7 +21,7 @@ class DbManager(context: Context, version: Int) {
             $colGrade	TEXT NOT NULL UNIQUE,
 	        $colGPA	    INTEGER NOT NULL
         )""".trimIndent()
-    var sqlDB: SQLiteDatabase? = null
+    private var sqlDB: SQLiteDatabase? = null
 
     init {
         val db = DatabaseHelper(context)
@@ -33,16 +34,16 @@ class DbManager(context: Context, version: Int) {
 
         override fun onCreate(db: SQLiteDatabase?) {
             db!!.execSQL(sqlCreateTable)
-            this.LoadDefault(db)
+            this.loadDefault(db)
         }
 
         override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
             db!!.execSQL("DROP TABLE IF EXISTS $dbTable")
             db.execSQL(sqlCreateTable)
-            this.LoadDefault(db)
+            this.loadDefault(db)
         }
 
-        private fun LoadDefault(db: SQLiteDatabase) {
+        private fun loadDefault(db: SQLiteDatabase) {
             val dbDefaultData = DbDefaultData()
             dbDefaultData.load(db, dbTable, colGrade, colGPA)
             when (dbDefaultData.result()) {
@@ -65,5 +66,11 @@ class DbManager(context: Context, version: Int) {
         }
         result.close()
         return data
+    }
+
+    fun updateData(grade: String, gpa: String) {
+        val values = ContentValues()
+        values.put(colGPA, gpa.toFloat())
+        sqlDB!!.update(dbTable, values, "$colGrade=?", arrayOf(grade))
     }
 }
