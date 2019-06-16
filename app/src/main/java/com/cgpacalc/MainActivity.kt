@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    private var dbVersion: Int? = null
+    private var dbVersion: Int = 1
     private var dbManager: DbManager? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,11 +24,10 @@ class MainActivity : AppCompatActivity() {
         this.Button_Functions()
 
         // Database
-        this.dbVersion = 1
-        this.dbManager = DbManager(applicationContext, dbVersion!!)
-        val x: HashMap<String, Float> = this.dbManager!!.readDataToHashMap()
+        this.dbManager = DbManager(applicationContext, dbVersion)
+        val x: MutableList<HashMap<String, Float>> = this.dbManager!!.readDataToList()
 
-        this.dbManager!!.updateData("A+", "96")
+        //this.dbManager!!.updateData("A+", "96")
 
         /**
          * for(key in x.keys){

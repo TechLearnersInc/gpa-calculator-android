@@ -53,15 +53,17 @@ class DbManager(context: Context, version: Int) {
         }
     }
 
-    fun readDataToHashMap(): HashMap<String, Float> {
-        val data: HashMap<String, Float> = HashMap()
+    fun readDataToList(): MutableList<HashMap<String, Float>> {
+        val data: MutableList<HashMap<String, Float>> = mutableListOf()
         val query = "SELECT * FROM $dbTable"
         val result = sqlDB!!.rawQuery(query, null)
         if (result.moveToFirst()) {
             do {
+                val hashMap:HashMap<String, Float> = HashMap()
                 val grade: String = result.getString(result.getColumnIndex(colGrade))
                 val gpa: String = result.getString(result.getColumnIndex(colGPA))
-                data[grade] = gpa.toFloat()
+                hashMap[grade] = gpa.toFloat()
+                data.add(hashMap)
             } while (result.moveToNext())
         }
         result.close()
