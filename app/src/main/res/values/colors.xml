@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#313131</color>
+    <color name="colorPrimaryDark">#212121</color>
+    <color name="colorAccent">#212121</color>
+    <color name="labelColor">#424242</color>
+    <color name="cgpaColor">#607D8B</color>
+    <color name="backgroundColor">#E0E0E0</color>
+    <color name="buttonTextColor">#F3E5F5</color>
+    <color name="customButtonShapeColor">#424242</color>
+    <color name="customButtonStrokeColor">#212121</color>
+    <color name="customLayoutShapeColor">#FAE0E0E0</color>
+    <color name="customLayoutShapeStrokeColor">#212121</color>
+    <color name="navBarColor">#020107</color>
+    <color name="gradeListViewLabelColor">#455A64</color>
+</resources>
