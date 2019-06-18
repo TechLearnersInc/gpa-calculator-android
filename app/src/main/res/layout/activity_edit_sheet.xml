@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout
+<android.support.constraint.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
@@ -8,45 +8,97 @@
         android:layout_height="match_parent"
         tools:context=".EditSheetActivity">
 
-    <android.support.constraint.ConstraintLayout
+    <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="5dp"
+            tools:ignore="MissingConstraints,UseCompoundDrawables"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+    >
 
-        <LinearLayout
-                android:id="@+id/linearLayout"
-                android:layout_width="match_parent"
+        <ImageView
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:background="@drawable/edit_icon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:id="@+id/imageView4"/>
+
+        <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="10dp"
-                tools:ignore="MissingConstraints">
+                android:paddingLeft="20dp"
+                android:paddingStart="20dp"
+                android:textSize="18sp"
+                android:textColor="@color/gradeListViewLabelColor"
+                android:text="@string/editSheetHelpText"
+                tools:ignore="RtlSymmetry"/>
 
-            <ImageView
-                    android:layout_width="96dp"
-                    android:layout_height="96dp"
-                    android:background="@drawable/edit_icon"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:id="@+id/imageView4"/>
+    </LinearLayout>
 
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="20dp"
-                    android:paddingStart="20dp"
-                    android:textSize="18sp"
-                    android:text="@string/editSheetHelpText"
-                    tools:ignore="RtlSymmetry"/>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="MissingConstraints"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/linearLayout2"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout3">
 
-        </LinearLayout>
+        <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/gradeLabel"
+                android:textColor="@color/gradeListViewLabelColor"
+                android:textSize="24sp"
+                android:focusable="false"
+                android:ems="10"
+                android:layout_weight="1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout"/>
 
+        <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/gpaLabel"
+                android:textColor="@color/gradeListViewLabelColor"
+                android:textSize="24sp"
+                android:focusable="false"
+                android:ems="10"
+                android:layout_weight="1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout"/>
+
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="0dp"
+                  app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+                  app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+                  android:id="@+id/linearLayout3" app:layout_constraintBottom_toBottomOf="parent">
         <ListView android:id="@+id/MyListView"
                   android:layout_width="match_parent"
                   android:layout_height="wrap_content"
-                  app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
-                  app:layout_constraintHorizontal_bias="0.0"
                   tools:ignore="MissingConstraints"
-                  app:layout_constraintTop_toBottomOf="@+id/linearLayout"/>
-    </android.support.constraint.ConstraintLayout>
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintEnd_toEndOf="parent"
+                  app:layout_constraintHorizontal_bias="0.0"
+                  app:layout_constraintTop_toBottomOf="@+id/linearLayout2"/>
+    </LinearLayout>
 
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>
+

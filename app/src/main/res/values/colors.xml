@@ -12,5 +12,5 @@
     <color name="customLayoutShapeColor">#FAE0E0E0</color>
     <color name="customLayoutShapeStrokeColor">#212121</color>
     <color name="navBarColor">#020107</color>
-    <color name="gradeListViewLabelColor">#455A64</color>
+    <color name="gradeListViewLabelColor">#434244</color>
 </resources>

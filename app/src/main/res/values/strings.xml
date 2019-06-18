@@ -13,4 +13,6 @@
     <string name="editSheetHelpText">Editing GPA is very simple. Just edit those gpa that you need, based on your
         versity\'s grading system and leave others as it is.
     </string>
+    <string name="gradeLabel">Grade</string>
+    <string name="gpaLabel">GPA</string>
 </resources>

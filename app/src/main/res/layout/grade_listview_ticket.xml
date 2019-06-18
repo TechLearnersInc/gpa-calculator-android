@@ -7,11 +7,11 @@
 
     <TextView
             android:id="@+id/gradeTextView"
-            android:text="A+"
+            android:text="@string/gradeLabel"
             android:textColor="@color/gradeListViewLabelColor"
             android:gravity="center"
             android:textAlignment="center"
-            android:textSize="28sp"
+            android:textSize="24sp"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_weight="50"/>
@@ -24,7 +24,7 @@
 
         <EditText
                 android:id="@+id/gpaEditText"
-                android:text="4.0"
+                android:text="@string/gpaLabel"
                 android:textColor="@color/gradeListViewLabelColor"
                 android:gravity="center"
                 android:textAlignment="center"
