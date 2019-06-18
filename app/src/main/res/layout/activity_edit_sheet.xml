@@ -20,8 +20,7 @@
             tools:ignore="MissingConstraints,UseCompoundDrawables"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-    >
+            app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
                 android:layout_width="96dp"
@@ -30,7 +29,8 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:id="@+id/imageView4"/>
+                android:id="@+id/imageView4"
+                tools:ignore="ContentDescription"/>
 
         <TextView
                 android:layout_width="wrap_content"
@@ -59,37 +59,46 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="@string/gradeLabel"
+                android:textStyle="bold"
                 android:textColor="@color/gradeListViewLabelColor"
-                android:textSize="24sp"
+                android:textSize="26sp"
                 android:focusable="false"
                 android:ems="10"
+                android:backgroundTint="@color/gradeListViewLabelColor"
                 android:layout_weight="1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout"/>
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+                tools:ignore="Autofill,LabelFor,TextFields,UnusedAttribute"/>
 
         <EditText
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="@string/gpaLabel"
+                android:textStyle="bold"
                 android:textColor="@color/gradeListViewLabelColor"
-                android:textSize="24sp"
+                android:textSize="26sp"
                 android:focusable="false"
                 android:ems="10"
+                android:backgroundTint="@color/gradeListViewLabelColor"
                 android:layout_weight="1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout"/>
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+                tools:ignore="Autofill,LabelFor,TextFields,UnusedAttribute"/>
 
     </LinearLayout>
 
-    <LinearLayout android:layout_width="match_parent" android:layout_height="0dp"
-                  app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="0dp"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintEnd_toEndOf="parent"
                   app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-                  android:id="@+id/linearLayout3" app:layout_constraintBottom_toBottomOf="parent">
+                  android:id="@+id/linearLayout3"
+                  app:layout_constraintBottom_toBottomOf="parent">
         <ListView android:id="@+id/MyListView"
                   android:layout_width="match_parent"
                   android:layout_height="wrap_content"

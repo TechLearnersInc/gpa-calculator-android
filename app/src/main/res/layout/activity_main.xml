@@ -10,7 +10,8 @@
 
     <ScrollView
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
+            android:layout_height="fill_parent"
+            tools:ignore="UselessParent">
 
         <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
@@ -26,7 +27,8 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="5dp"
                     app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
-                    app:layout_constraintHorizontal_bias="0.473"/>
+                    app:layout_constraintHorizontal_bias="0.473"
+                    tools:ignore="ContentDescription"/>
 
             <android.support.constraint.ConstraintLayout
                     android:layout_width="380dp"
@@ -35,13 +37,11 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent" android:id="@+id/constraintLayout"
                     app:layout_constraintHorizontal_bias="0.488" app:layout_constraintTop_toBottomOf="@+id/imageView"
-                    android:layout_marginTop="15dp"
-            >
+                    android:layout_marginTop="15dp">
 
                 <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:inputType="textPersonName"
                         android:focusable="false"
                         android:background="@android:color/transparent"
                         android:text="@string/subLabel"
@@ -50,17 +50,23 @@
                         android:ems="10"
                         android:id="@+id/subLabel"
                         android:textSize="36sp"
-                        app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="10dp"
-                        app:layout_constraintHorizontal_bias="0.0"/>
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginTop="10dp"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        tools:ignore="Autofill,LabelFor,TextFields"/>
                 <EditText
                         android:hint="@string/gradeHint"
                         android:layout_width="230dp"
                         android:textSize="16sp"
-                        android:layout_height="wrap_content" android:id="@+id/subGrades"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/subGrades"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="10dp"
-                        app:layout_constraintTop_toBottomOf="@+id/subLabel"/>
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginTop="10dp"
+                        app:layout_constraintTop_toBottomOf="@+id/subLabel"
+                        tools:ignore="Autofill,TextFields"/>
                 <Button
                         android:text="@string/calculateBtn"
                         android:background="@drawable/custom_button"
@@ -72,11 +78,11 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textViewCGPA" android:layout_marginTop="5dp"
-                        android:layout_marginBottom="15dp" app:layout_constraintBottom_toBottomOf="parent"/>
+                        android:layout_marginBottom="15dp" app:layout_constraintBottom_toBottomOf="parent"
+                        tools:ignore="UnusedAttribute"/>
                 <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:inputType="textPersonName"
                         android:focusable="false"
                         android:background="@android:color/transparent"
                         android:text="@string/labLabel"
@@ -86,16 +92,21 @@
                         android:id="@+id/labLabel"
                         android:textSize="36sp"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="10dp"
-                        app:layout_constraintTop_toBottomOf="@+id/subGrades"/>
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginTop="10dp"
+                        app:layout_constraintTop_toBottomOf="@+id/subGrades"
+                        tools:ignore="Autofill,LabelFor,TextFields"/>
                 <EditText
                         android:hint="@string/gradeHint"
                         android:layout_width="230dp"
                         android:textSize="16sp"
-                        android:layout_height="wrap_content" android:id="@+id/labGrades"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/labGrades"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="10dp"
-                        app:layout_constraintTop_toBottomOf="@+id/labLabel"/>
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginTop="10dp"
+                        app:layout_constraintTop_toBottomOf="@+id/labLabel"
+                        tools:ignore="Autofill,TextFields"/>
                 <TextView
                         android:hint="@string/cgpaHint"
                         android:textColor="@color/cgpaColor"
