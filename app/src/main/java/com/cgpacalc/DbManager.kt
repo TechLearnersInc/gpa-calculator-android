@@ -9,6 +9,7 @@ import android.widget.Toast
 
 class DbManager(context: Context, version: Int) {
 
+    private var db: DatabaseHelper? = null
     val dbName: String = "MyDatabase"
     val dbVersion: Int = version
     val dbTable: String = "MyTable"
@@ -24,8 +25,8 @@ class DbManager(context: Context, version: Int) {
     private var sqlDB: SQLiteDatabase? = null
 
     init {
-        val db = DatabaseHelper(context)
-        sqlDB = db.writableDatabase
+        this.db = DatabaseHelper(context)
+        this.sqlDB = this.db!!.writableDatabase
     }
 
     inner class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, dbName, null, dbVersion) {
@@ -38,6 +39,12 @@ class DbManager(context: Context, version: Int) {
         }
 
         override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
+            db!!.execSQL("DROP TABLE IF EXISTS $dbTable")
+            db.execSQL(sqlCreateTable)
+            this.loadDefault(db)
+        }
+
+        fun resetDb(db: SQLiteDatabase?) {
             db!!.execSQL("DROP TABLE IF EXISTS $dbTable")
             db.execSQL(sqlCreateTable)
             this.loadDefault(db)
@@ -74,5 +81,15 @@ class DbManager(context: Context, version: Int) {
         val values = ContentValues()
         values.put(colGPA, gpa.toFloat())
         sqlDB!!.update(dbTable, values, "$colGrade=?", arrayOf(grade))
+    }
+
+    fun resetDb(): Boolean {
+        return try {
+            this.db!!.resetDb(this.sqlDB)
+            true
+        } catch (e: Exception) {
+            e.printStackTrace()
+            false
+        }
     }
 }

@@ -3,15 +3,8 @@
 <menu xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android"
       xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item android:id="@+id/actionSaveSheet"
-          android:title="@string/save_menu_item"
-          android:icon="@drawable/ic_save"
-          app:showAsAction="always"
-          tools:ignore="AlwaysShowAction"/>
-
-    <item android:id="@+id/actionResetSheet"
+    <item android:id="@+id/actionResetDb"
           android:title="@string/reset_menu_item"
-          android:icon="@drawable/ic_reset"
           app:showAsAction="always"
           tools:ignore="AlwaysShowAction"/>
 

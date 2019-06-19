@@ -6,6 +6,7 @@ import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import android.view.WindowManager
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -23,6 +24,9 @@ class MainActivity : AppCompatActivity() {
 
         // Buttons Functions
         this.buttonFunctions()
+
+        // Hide Keyboard when activity starts
+        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN)
     }
 
     // Adding three dot navigation menu to this activity

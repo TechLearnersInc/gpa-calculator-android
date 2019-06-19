@@ -11,6 +11,7 @@ import kotlinx.android.synthetic.main.grade_listview_ticket.view.*
 open class GradeListViewAdaptar(thisContext: Context) : BaseAdapter() {
 
     private var context: Context = thisContext
+    var dbManager: DbManager? = null
     var listOfGrade: MutableList<HashMap<String, Float>>? = null
 
     init {
@@ -46,7 +47,7 @@ open class GradeListViewAdaptar(thisContext: Context) : BaseAdapter() {
 
     open fun refreshDatabase() {
         // Database
-        val dbManager = DbManager(this.context, MainActivity().dbVersion)
-        this.listOfGrade = dbManager.readDataToList()
+        this.dbManager = DbManager(this.context, MainActivity().dbVersion)
+        this.listOfGrade = this.dbManager!!.readDataToList()
     }
 }

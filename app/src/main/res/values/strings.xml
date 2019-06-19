@@ -15,6 +15,5 @@
     </string>
     <string name="gradeLabel">Grade</string>
     <string name="gpaLabel">GPA</string>
-    <string name="save_menu_item">Save</string>
     <string name="reset_menu_item">Reset</string>
 </resources>
