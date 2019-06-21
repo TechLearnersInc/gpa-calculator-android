@@ -8,11 +8,11 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import kotlinx.android.synthetic.main.grade_listview_ticket.view.*
 
-open class GradeListViewAdaptar(thisContext: Context) : BaseAdapter() {
+open class CreditListViewAdaptar(thisContext: Context) : BaseAdapter() {
 
     private var context: Context = thisContext
     var dbManager: DbManager? = null
-    var listOfGrade: MutableList<HashMap<String, Float>>? = null
+    var listOfCredit: MutableList<HashMap<String, Float>>? = null
 
     init {
         this.refreshDatabase()
@@ -23,18 +23,18 @@ open class GradeListViewAdaptar(thisContext: Context) : BaseAdapter() {
         val inflator: LayoutInflater = this.context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
         val myview: View = inflator.inflate(R.layout.grade_listview_ticket, null)
 
-        val gradeList: HashMap<String, Float> = this.listOfGrade!![position]
-        val grade: String = gradeList.keys.toString().substring(1, gradeList.keys.toString().length - 1)
-        val gpa: String = gradeList.values.toString().substring(1, gradeList.values.toString().length - 1)
+        val gradeList: HashMap<String, Float> = this.listOfCredit!![position]
+        val name: String = gradeList.keys.toString().substring(1, gradeList.keys.toString().length - 1)
+        val credit: String = gradeList.values.toString().substring(1, gradeList.values.toString().length - 1)
 
-        myview.gradeTextView.text = grade
-        myview.gpaEditText.text = gpa
+        myview.gradeTextView.text = name
+        myview.gpaEditText.text = credit
 
         return myview
     }
 
     override fun getItem(position: Int): Any {
-        return this.listOfGrade!![position]
+        return this.listOfCredit!![position]
     }
 
     override fun getItemId(position: Int): Long {
@@ -42,12 +42,12 @@ open class GradeListViewAdaptar(thisContext: Context) : BaseAdapter() {
     }
 
     override fun getCount(): Int {
-        return this.listOfGrade!!.size
+        return this.listOfCredit!!.size
     }
 
     open fun refreshDatabase() {
         // Database
         this.dbManager = DbManager(this.context, MainActivity().dbVersion)
-        this.listOfGrade = this.dbManager!!.readDataToList(true)
+        this.listOfCredit = this.dbManager!!.readDataToList(false).asReversed()
     }
 }

@@ -11,14 +11,14 @@ class DbDefaultData {
         val values = ContentValues()
         try {
 
-            // Subject
-            values.put(colGrade, "SUB")
+            //Subject
+            values.put(colGrade, "Subject")
             values.put(colGPA, "3.0")
             db.insert(dbTable, "", values)
             values.clear()
 
             // Laboratory
-            values.put(colGrade, "LAB")
+            values.put(colGrade, "Laboratory")
             values.put(colGPA, "1.5")
             db.insert(dbTable, "", values)
             values.clear()

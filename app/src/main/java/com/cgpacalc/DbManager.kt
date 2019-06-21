@@ -14,7 +14,7 @@ class DbManager(context: Context, version: Int) {
     val dbVersion: Int = version
     val dbTable: String = "MyTable"
     val colGrade: String = "grade"
-    val colGPA: String = "gpa"
+    val colGPA: String = "point"
     private val colID: String = "ID"
     val sqlCreateTable: String = """
         CREATE TABLE $dbTable (
@@ -60,13 +60,16 @@ class DbManager(context: Context, version: Int) {
         }
     }
 
-    fun readDataToList(): MutableList<HashMap<String, Float>> {
+    fun readDataToList(isGrade: Boolean): MutableList<HashMap<String, Float>> {
         val data: MutableList<HashMap<String, Float>> = mutableListOf()
-        val query = "SELECT * FROM $dbTable"
+        val query: String = when (isGrade) {
+            true -> "SELECT * FROM $dbTable WHERE NOT $colGrade='Subject' AND NOT $colGrade='Laboratory'"
+            false -> "SELECT * FROM $dbTable WHERE $colGrade='Subject' OR $colGrade='Laboratory'"
+        }
         val result = sqlDB!!.rawQuery(query, null)
         if (result.moveToFirst()) {
             do {
-                val hashMap:HashMap<String, Float> = HashMap()
+                val hashMap: HashMap<String, Float> = HashMap()
                 val grade: String = result.getString(result.getColumnIndex(colGrade))
                 val gpa: String = result.getString(result.getColumnIndex(colGPA))
                 hashMap[grade] = gpa.toFloat()

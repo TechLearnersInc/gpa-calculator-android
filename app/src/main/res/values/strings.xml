@@ -14,6 +14,6 @@
         versity\'s grading system and leave others as it is.
     </string>
     <string name="gradeLabel">Grade</string>
-    <string name="gpaLabel">GPA</string>
+    <string name="gpaLabel">Point</string>
     <string name="reset_menu_item">Reset</string>
 </resources>
