@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import android.view.WindowManager
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -59,9 +60,8 @@ class MainActivity : AppCompatActivity() {
 
     // Buttons Functions
     private fun buttonFunctions() {
-        calculateBtn.setOnClickListener {
-            Toast.makeText(applicationContext, "Calculate Button", Toast.LENGTH_SHORT).show()
-        }
+
+        this.subjectListView.adapter = SubjectListViewAdaptar(this@MainActivity)
     }
 
 

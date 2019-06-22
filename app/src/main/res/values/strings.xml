@@ -16,4 +16,6 @@
     <string name="gradeLabel">Grade</string>
     <string name="gpaLabel">Point</string>
     <string name="reset_menu_item">Reset</string>
+    <string name="typeLabel">Type</string>
+    <string name="creditLabel">Credit</string>
 </resources>
