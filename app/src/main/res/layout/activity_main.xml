@@ -118,7 +118,8 @@
                 android:inputType="text"
                 android:hint="@string/gradeLabel"
                 android:ems="10"
-                android:id="@+id/editText2"/>
+                android:id="@+id/editText2"
+                tools:ignore="Autofill"/>
         <EditText
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -126,13 +127,20 @@
                 android:inputType="number"
                 android:hint="@string/creditLabel"
                 android:ems="10"
-                android:id="@+id/editText3"/>
+                android:id="@+id/editText3"
+                tools:ignore="Autofill"/>
         <Button
                 android:text="@string/addButtonLabel"
+                android:background="@drawable/button_shape"
+                android:textColor="@color/buttonTextColor"
+                android:drawableStart="@drawable/ic_add"
+                android:elevation="10dp"
+                android:paddingStart="8dp"
                 android:layout_width="0dp"
-                android:layout_weight="0.8"
-                android:layout_height="wrap_content"
-                android:id="@+id/button2"/>
+                android:layout_weight="0.7"
+                android:layout_height="38dp"
+                android:id="@+id/button2"
+                tools:ignore="RtlSymmetry"/>
     </LinearLayout>
 
     <LinearLayout
@@ -165,7 +173,8 @@
                 android:inputType="text"
                 android:hint="@string/gradeLabel"
                 android:ems="10"
-                android:id="@+id/editText5"/>
+                android:id="@+id/editText5"
+                tools:ignore="Autofill"/>
         <EditText
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -173,13 +182,20 @@
                 android:inputType="number"
                 android:hint="@string/creditLabel"
                 android:ems="10"
-                android:id="@+id/editText6"/>
+                android:id="@+id/editText6"
+                tools:ignore="Autofill"/>
         <Button
                 android:text="@string/addButtonLabel"
                 android:layout_width="0dp"
-                android:layout_weight="0.8"
-                android:layout_height="wrap_content"
-                android:id="@+id/button3"/>
+                android:layout_weight="0.7"
+                android:drawableStart="@drawable/ic_add"
+                android:paddingStart="8dp"
+                android:elevation="10dp"
+                android:background="@drawable/button_shape"
+                android:textColor="@color/buttonTextColor"
+                android:layout_height="38dp"
+                android:id="@+id/button3"
+                tools:ignore="RtlSymmetry"/>
     </LinearLayout>
 
     <Button
@@ -191,12 +207,14 @@
             android:textColor="@color/buttonTextColor"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
+            android:textSize="18sp"
+            android:elevation="10dp"
             android:layout_marginLeft="7dp"
             android:layout_marginRight="7dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/linearLayout5"
-            app:layout_constraintHorizontal_bias="0.0" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout8"/>
-
 
 </android.support.constraint.ConstraintLayout>
