@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools" android:orientation="horizontal"
+              android:weightSum="100"
+              android:gravity="center"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <TextView
+            android:id="@+id/gradeInputDialogue"
+            android:text="@string/gradeLabel"
+            android:textColor="@color/gradeListViewLabelColor"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="70"/>
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_weight="60"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <EditText
+                android:id="@+id/gpaInputDialogue"
+                android:text="@string/gpaLabel"
+                android:textColor="@color/gradeListViewLabelColor"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                tools:ignore="Autofill,LabelFor"/>
+
+    </LinearLayout>
+
+</LinearLayout>
