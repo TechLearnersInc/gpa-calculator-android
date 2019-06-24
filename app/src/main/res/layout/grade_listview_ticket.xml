@@ -9,7 +9,7 @@
     <TextView
             android:id="@+id/gradeTextView"
             android:text="@string/gradeLabel"
-            android:textColor="@color/gradeListViewLabelColor"
+            android:textColor="@color/textColor"
             android:gravity="center"
             android:textAlignment="center"
             android:textSize="24sp"
@@ -26,7 +26,7 @@
         <TextView
                 android:id="@+id/gpaEditText"
                 android:text="@string/gpaLabel"
-                android:textColor="@color/gradeListViewLabelColor"
+                android:textColor="@color/textColorLight"
                 android:gravity="center"
                 android:textAlignment="center"
                 android:textSize="24sp"
