@@ -11,10 +11,9 @@
             android:text="@string/gradeLabel"
             android:textColor="@color/textColor"
             android:gravity="center"
-            android:textAlignment="center"
-            android:textSize="24sp"
+            android:textSize="22sp"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:layout_weight="50"/>
 
     <LinearLayout
@@ -28,10 +27,9 @@
                 android:text="@string/gpaLabel"
                 android:textColor="@color/textColorLight"
                 android:gravity="center"
-                android:textAlignment="center"
-                android:textSize="24sp"
+                android:textSize="22sp"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"/>
+                android:layout_height="50sp"/>
 
     </LinearLayout>
 

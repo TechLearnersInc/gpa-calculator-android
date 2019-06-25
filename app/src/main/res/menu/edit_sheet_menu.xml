@@ -5,6 +5,7 @@
 
     <item android:id="@+id/actionResetDb"
           android:title="@string/reset_menu_item"
+          android:icon="@drawable/reset"
           app:showAsAction="always"
           tools:ignore="AlwaysShowAction"/>
 

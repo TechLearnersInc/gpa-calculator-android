@@ -116,9 +116,11 @@
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:inputType="text"
+                android:drawableStart="@drawable/ic_edit"
+                android:drawablePadding="5dp"
                 android:hint="@string/gradeLabel"
                 android:ems="10"
-                android:id="@+id/editText2"
+                android:id="@+id/subGradeEditText"
                 tools:ignore="Autofill"/>
         <EditText
                 android:layout_width="0dp"
@@ -126,8 +128,10 @@
                 android:layout_height="wrap_content"
                 android:inputType="number"
                 android:hint="@string/creditLabel"
+                android:drawableStart="@drawable/ic_edit"
+                android:drawablePadding="5dp"
                 android:ems="10"
-                android:id="@+id/editText3"
+                android:id="@+id/subCreditEditText"
                 tools:ignore="Autofill"/>
         <Button
                 android:text="@string/addButtonLabel"
@@ -139,7 +143,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="0.7"
                 android:layout_height="38dp"
-                android:id="@+id/button2"
+                android:id="@+id/subAddButton"
                 tools:ignore="RtlSymmetry"/>
     </LinearLayout>
 
@@ -171,9 +175,11 @@
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:inputType="text"
+                android:drawableStart="@drawable/ic_edit"
+                android:drawablePadding="5dp"
                 android:hint="@string/gradeLabel"
                 android:ems="10"
-                android:id="@+id/editText5"
+                android:id="@+id/labGradeEditText"
                 tools:ignore="Autofill"/>
         <EditText
                 android:layout_width="0dp"
@@ -181,8 +187,10 @@
                 android:layout_height="wrap_content"
                 android:inputType="number"
                 android:hint="@string/creditLabel"
+                android:drawableStart="@drawable/ic_edit"
+                android:drawablePadding="5dp"
                 android:ems="10"
-                android:id="@+id/editText6"
+                android:id="@+id/labCreditEditText"
                 tools:ignore="Autofill"/>
         <Button
                 android:text="@string/addButtonLabel"
@@ -194,7 +202,7 @@
                 android:background="@drawable/button_shape"
                 android:textColor="@color/buttonTextColor"
                 android:layout_height="38dp"
-                android:id="@+id/button3"
+                android:id="@+id/labAddButton"
                 tools:ignore="RtlSymmetry"/>
     </LinearLayout>
 

@@ -31,7 +31,7 @@ class DbManager(context: Context, version: Int) {
 
     inner class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, dbName, null, dbVersion) {
 
-        var context: Context? = context
+        private var context: Context? = context
 
         override fun onCreate(db: SQLiteDatabase?) {
             db!!.execSQL(sqlCreateTable)

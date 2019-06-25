@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.WindowManager
@@ -25,6 +26,9 @@ class MainActivity : AppCompatActivity() {
 
         // Buttons Functions
         this.buttonFunctions()
+
+        // Setting default Subject and Laboratory credit
+        this.defaultSubLabCredit()
 
         // Hide Keyboard when activity starts
         window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN)
@@ -60,9 +64,23 @@ class MainActivity : AppCompatActivity() {
 
     // Buttons Functions
     private fun buttonFunctions() {
+        val subjectListViewAdaptar = SubjectListViewAdaptar(this@MainActivity)
+        this.subjectListView.adapter = subjectListViewAdaptar
 
-        this.subjectListView.adapter = SubjectListViewAdaptar(this@MainActivity)
+        subAddButton.setOnClickListener {
+
+
+            Toast.makeText(this@MainActivity, "Hdd", Toast.LENGTH_SHORT).show()
+        }
+
     }
 
+    private fun defaultSubLabCredit() {
+        val creditData = DbManager(this@MainActivity, MainActivity().dbVersion)
+            .readDataToList(false)
+            .asReversed()
+        subCreditEditText.setText(creditData[0]["Subject"].toString())
+        labCreditEditText.setText(creditData[1]["Laboratory"].toString())
+    }
 
 }

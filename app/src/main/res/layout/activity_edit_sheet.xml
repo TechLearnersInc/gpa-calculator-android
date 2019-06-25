@@ -52,11 +52,13 @@
             app:layout_constraintEnd_toEndOf="parent"
             tools:ignore="MissingConstraints"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-            android:id="@+id/linearLayout4" app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
-    >
+            android:id="@+id/linearLayout4"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout2">
+
         <ListView android:id="@+id/CreditListView"
                   android:layout_width="match_parent"
                   android:layout_height="wrap_content"/>
+
     </LinearLayout>
 
     <LinearLayout

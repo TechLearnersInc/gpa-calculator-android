@@ -2,6 +2,8 @@ package com.cgpacalc
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.graphics.Color
+import android.support.v4.content.ContextCompat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -29,6 +31,13 @@ open class GradeListViewAdaptar(thisContext: Context) : BaseAdapter() {
 
         myview.gradeTextView.text = grade
         myview.gpaEditText.text = gpa
+
+        myview.setBackgroundColor(
+            when (position % 2) {
+                1 -> ContextCompat.getColor(this.context, R.color.listViewColorA)
+                else -> ContextCompat.getColor(this.context, R.color.listViewColorB)
+            }
+        )
 
         return myview
     }

@@ -73,6 +73,7 @@ class EditSheetActivity : AppCompatActivity() {
         this.adaptarGrade = GradeListViewAdaptar(this@EditSheetActivity)
         this.GradeListView.adapter = this.adaptarGrade
 
+        @Suppress("UsePropertyAccessSyntax")
         this.GradeListView.setOnItemClickListener { _, _, position, _ ->
             run {
                 val inputView = LayoutInflater.from(this@EditSheetActivity).inflate(R.layout.gpa_input_dialogue, null)
@@ -122,6 +123,7 @@ class EditSheetActivity : AppCompatActivity() {
         this.adaptarCredit = CreditListViewAdaptar(this@EditSheetActivity)
         this.CreditListView.adapter = this.adaptarCredit
 
+        @Suppress("UsePropertyAccessSyntax")
         this.CreditListView.setOnItemClickListener { _, _, position, _ ->
             run {
                 val inputView = LayoutInflater.from(this@EditSheetActivity).inflate(R.layout.gpa_input_dialogue, null)
