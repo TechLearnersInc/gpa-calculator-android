@@ -17,7 +17,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" android:id="@+id/button5"
                 android:layout_weight="1"
-                tools:layout_editor_absoluteX="411dp" tools:ignore="HardcodedText,MissingConstraints,ObsoleteLayoutParam"/>
+                tools:layout_editor_absoluteX="411dp"
+                tools:ignore="HardcodedText,MissingConstraints,ObsoleteLayoutParam"/>
 
     </ScrollView>
 </LinearLayout>

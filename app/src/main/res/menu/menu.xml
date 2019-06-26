@@ -10,6 +10,12 @@
           app:showAsAction="always"
           tools:ignore="AlwaysShowAction"/>
 
+    <item android:id="@+id/actionRefresh"
+          android:title="@string/refresh_menu_item"
+          android:icon="@drawable/ic_refresh"
+          app:showAsAction="always"
+          tools:ignore="AlwaysShowAction"/>
+
     <item android:id="@+id/actionEditSheet"
           android:title="@string/edit_sheet_menu_item"
           app:showAsAction="never"/>

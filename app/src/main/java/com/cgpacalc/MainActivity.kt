@@ -4,11 +4,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.WindowManager
-import android.widget.ArrayAdapter
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -58,6 +56,11 @@ class MainActivity : AppCompatActivity() {
                 }
                 builder.create().show()
             }
+            R.id.actionRefresh -> {
+                startActivity(Intent(this@MainActivity, MainActivity::class.java))
+                finish()
+            }
+            R.id.actionClear -> Toast.makeText(this@MainActivity, "Clear", Toast.LENGTH_SHORT).show()
         }
         return super.onOptionsItemSelected(item)
     }
