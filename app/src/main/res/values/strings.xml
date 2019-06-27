@@ -4,7 +4,7 @@
     <string name="edit_sheet_activity_label">Edit Sheet</string>
     <string name="subLabel">Subject Grades</string>
     <string name="labLabel">Laboratory Grades</string>
-    <string name="gradeHint">Use comma for seperation</string>
+    <string name="gradeHint">Use comma for separation</string>
     <string name="cgpaHint">CGPA</string>
     <string name="edit_sheet_menu_item">Edit Sheet</string>
     <string name="about_menu_item">About</string>
@@ -22,5 +22,5 @@
     <string name="addButtonLabel">Add</string>
     <string name="subInputLabel">SUB</string>
     <string name="labInputLabel">LAB</string>
-    <string name="refresh_menu_item">refresh</string>
+    <string name="refresh_menu_item">Refresh</string>
 </resources>

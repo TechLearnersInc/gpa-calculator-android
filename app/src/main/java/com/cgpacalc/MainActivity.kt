@@ -9,10 +9,13 @@ import android.view.MenuItem
 import android.view.WindowManager
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.student_sub_listview_ticket.*
+import java.lang.Exception
 
 class MainActivity : AppCompatActivity() {
 
     val dbVersion: Int = 1
+    private var subjectListViewAdaptar: SubjectListViewAdaptar? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         // Main
@@ -41,8 +44,8 @@ class MainActivity : AppCompatActivity() {
     // Adding actions to menu item
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         when (item!!.itemId) {
-            R.id.actionEditSheet -> startActivity(Intent(this, EditSheetActivity::class.java))
-            R.id.actionAbout -> startActivity(Intent(this, AboutActivity::class.java))
+            R.id.actionEditSheet -> startActivity(Intent(this@MainActivity, EditSheetActivity::class.java))
+            R.id.actionAbout -> startActivity(Intent(this@MainActivity, AboutActivity::class.java))
             R.id.actionExit -> {
                 val builder = AlertDialog.Builder(this)
                 builder.setMessage("Are you sure to exit?")
@@ -60,22 +63,60 @@ class MainActivity : AppCompatActivity() {
                 startActivity(Intent(this@MainActivity, MainActivity::class.java))
                 finish()
             }
-            R.id.actionClear -> Toast.makeText(this@MainActivity, "Clear", Toast.LENGTH_SHORT).show()
+            R.id.actionClear -> {
+                try {
+                    this.subjectListViewAdaptar!!.listOfSubjects.clear()
+                    this.subjectListViewAdaptar!!.notifyDataSetChanged()
+                    Toast.makeText(this@MainActivity, "Cleared", Toast.LENGTH_LONG).show()
+                } catch (e: Exception) {
+                    Toast.makeText(this@MainActivity, "Unexpected error occurred", Toast.LENGTH_LONG).show()
+                    e.printStackTrace()
+                }
+            }
         }
         return super.onOptionsItemSelected(item)
     }
 
     // Buttons Functions
     private fun buttonFunctions() {
-        val subjectListViewAdaptar = SubjectListViewAdaptar(this@MainActivity)
+        this.subjectListViewAdaptar = SubjectListViewAdaptar(this@MainActivity)
         this.subjectListView.adapter = subjectListViewAdaptar
+        this.subAddButton.setOnClickListener { this.infoAddBtnFunc(true) }
+        this.labAddButton.setOnClickListener { this.infoAddBtnFunc(false) }
+    }
 
-        subAddButton.setOnClickListener {
-
-
-            Toast.makeText(this@MainActivity, "Hdd", Toast.LENGTH_SHORT).show()
+    private fun infoAddBtnFunc(isSubject: Boolean) {
+        try {
+            val grade: String
+            val credit: String
+            when (isSubject) {
+                true -> {
+                    grade = this.subGradeEditText.text.toString().toUpperCase().trim()
+                    credit = this.subCreditEditText.text.toString().trim()
+                }
+                else -> {
+                    grade = this.labGradeEditText.text.toString().toUpperCase().trim()
+                    credit = this.labCreditEditText.text.toString().trim()
+                }
+            }
+            if (grade.isNotEmpty() && credit.isNotEmpty()) {
+                this.subjectListViewAdaptar!!.listOfSubjects.add(
+                    when (isSubject) {
+                        true -> listOf("Subject", grade, credit)
+                        else -> listOf("Laboratory", grade, credit)
+                    }
+                )
+                this.subjectListViewAdaptar!!.notifyDataSetChanged()
+                this.subGradeEditText.text.clear()
+                this.labGradeEditText.text.clear()
+                Toast.makeText(this@MainActivity, "Added", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this@MainActivity, "No value found", Toast.LENGTH_SHORT).show()
+            }
+        } catch (e: Exception) {
+            Toast.makeText(this@MainActivity, "Unexpected error occurred", Toast.LENGTH_SHORT).show()
+            e.printStackTrace()
         }
-
     }
 
     private fun defaultSubLabCredit() {
@@ -85,5 +126,4 @@ class MainActivity : AppCompatActivity() {
         subCreditEditText.setText(creditData[0]["Subject"].toString())
         labCreditEditText.setText(creditData[1]["Laboratory"].toString())
     }
-
 }

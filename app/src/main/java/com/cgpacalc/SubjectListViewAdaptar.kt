@@ -21,7 +21,7 @@ open class SubjectListViewAdaptar(thisContext: Context) : BaseAdapter() {
 
         val type: String = listOfSubjects[position][0]
         val grade: String = listOfSubjects[position][1]
-        val credit: String = listOfSubjects[position][3]
+        val credit: String = listOfSubjects[position][2]
 
         myview.type.text = type
         myview.grade.text = grade
