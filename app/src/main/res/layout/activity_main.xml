@@ -17,11 +17,12 @@
         <LinearLayout android:id="@+id/linearLayout5"
                       android:layout_width="match_parent"
                       android:layout_height="wrap_content"
-                      android:gravity="center" app:layout_constraintStart_toStartOf="parent"
+                      android:gravity="center"
+                      app:layout_constraintStart_toStartOf="parent"
                       app:layout_constraintEnd_toEndOf="parent"
                       tools:ignore="MissingConstraints"
                       app:layout_constraintBottom_toTopOf="@+id/linearLayout6"
-                      app:layout_constraintTop_toTopOf="parent">
+                      app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.6">
 
             <EditText
                     android:layout_width="0dp"
@@ -33,6 +34,8 @@
                     android:textColor="@color/gradeListViewLabelColor"
                     android:textSize="24sp"
                     android:focusable="false"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
                     android:ems="10"
                     android:backgroundTint="@color/colorPrimaryDark"
                     app:layout_constraintStart_toStartOf="parent"
@@ -50,6 +53,8 @@
                     android:textColor="@color/gradeListViewLabelColor"
                     android:textSize="24sp"
                     android:focusable="false"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
                     android:ems="10"
                     android:backgroundTint="@color/gradeListViewLabelColor"
                     android:layout_weight="1"
@@ -68,6 +73,8 @@
                     android:textColor="@color/gradeListViewLabelColor"
                     android:textSize="24sp"
                     android:focusable="false"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
                     android:ems="10"
                     android:backgroundTint="@color/gradeListViewLabelColor"
                     android:layout_weight="1"
@@ -78,14 +85,17 @@
                     tools:ignore="Autofill,LabelFor,TextFields,UnusedAttribute"/>
 
         </LinearLayout>
+
         <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" tools:ignore="MissingConstraints"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout5" android:id="@+id/linearLayout6"
-                app:layout_constraintBottom_toTopOf="@+id/linearLayout7">
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout5"
+                android:id="@+id/linearLayout6"
+                app:layout_constraintBottom_toTopOf="@+id/linearLayout7"
+                tools:ignore="MissingConstraints">
 
             <ListView android:id="@+id/subjectListView"
                       android:layout_width="match_parent"
@@ -122,6 +132,7 @@
                     android:inputType="text"
                     android:drawableStart="@drawable/ic_edit"
                     android:drawablePadding="5dp"
+                    android:layout_marginEnd="10dp"
                     android:hint="@string/gradeLabel"
                     android:ems="10"
                     android:id="@+id/subGradeEditText"
@@ -135,6 +146,7 @@
                     android:drawableStart="@drawable/ic_edit"
                     android:drawablePadding="5dp"
                     android:ems="10"
+                    android:layout_marginEnd="10dp"
                     android:id="@+id/subCreditEditText"
                     tools:ignore="Autofill"/>
             <Button
@@ -181,6 +193,7 @@
                     android:inputType="text"
                     android:drawableStart="@drawable/ic_edit"
                     android:drawablePadding="5dp"
+                    android:layout_marginEnd="10dp"
                     android:hint="@string/gradeLabel"
                     android:ems="10"
                     android:id="@+id/labGradeEditText"
@@ -193,6 +206,7 @@
                     android:hint="@string/creditLabel"
                     android:drawableStart="@drawable/ic_edit"
                     android:drawablePadding="5dp"
+                    android:layout_marginEnd="10dp"
                     android:ems="10"
                     android:id="@+id/labCreditEditText"
                     tools:ignore="Autofill"/>
@@ -217,17 +231,16 @@
                 android:id="@+id/calculateButton"
                 android:background="@drawable/button_shape"
                 android:textColor="@color/buttonTextColor"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginBottom="7dp"
                 android:textSize="18sp"
                 android:elevation="10dp"
-                android:layout_marginLeft="7dp"
-                android:layout_marginRight="7dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/linearLayout5"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout8"/>
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout8" android:layout_marginEnd="7dp"
+                android:layout_marginStart="7dp"/>
 
     </android.support.constraint.ConstraintLayout>
 

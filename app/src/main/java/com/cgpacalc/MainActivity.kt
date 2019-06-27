@@ -1,5 +1,6 @@
 package com.cgpacalc
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
@@ -9,14 +10,13 @@ import android.view.MenuItem
 import android.view.WindowManager
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.student_sub_listview_ticket.*
-import java.lang.Exception
 
 class MainActivity : AppCompatActivity() {
 
     val dbVersion: Int = 1
     private var subjectListViewAdaptar: SubjectListViewAdaptar? = null
 
+    @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         // Main
         super.onCreate(savedInstanceState)
