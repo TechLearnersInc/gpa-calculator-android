@@ -1,15 +1,17 @@
-package com.cgpacalc
+package com.gpacalc
 
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.WindowManager
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
+import java.lang.NullPointerException
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,6 +26,10 @@ class MainActivity : AppCompatActivity() {
 
         // Database
         DbManager(applicationContext, this.dbVersion)
+
+        // ListView Adapter Adding
+        this.subjectListViewAdaptar = SubjectListViewAdaptar(this@MainActivity)
+        this.subjectListView.adapter = subjectListViewAdaptar
 
         // Buttons Functions
         this.buttonFunctions()
@@ -79,10 +85,10 @@ class MainActivity : AppCompatActivity() {
 
     // Buttons Functions
     private fun buttonFunctions() {
-        this.subjectListViewAdaptar = SubjectListViewAdaptar(this@MainActivity)
-        this.subjectListView.adapter = subjectListViewAdaptar
         this.subAddButton.setOnClickListener { this.infoAddBtnFunc(true) }
         this.labAddButton.setOnClickListener { this.infoAddBtnFunc(false) }
+        this.calculateButton.setOnClickListener { this.calculateBtnAction() }
+
     }
 
     private fun infoAddBtnFunc(isSubject: Boolean) {
@@ -117,6 +123,17 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this@MainActivity, "Unexpected error occurred", Toast.LENGTH_SHORT).show()
             e.printStackTrace()
         }
+    }
+
+    private fun calculateBtnAction() {
+        try {
+            val x = Calculator(this@MainActivity, this.subjectListViewAdaptar!!.listOfSubjects)
+            Log.i("FARIA", x.calculate().toString())
+            Toast.makeText(this@MainActivity, x.calculate().toString(), Toast.LENGTH_LONG).show()
+        } catch (e: NullPointerException) {
+            Toast.makeText(this@MainActivity, "Unable to calculate", Toast.LENGTH_LONG).show()
+        }
+
     }
 
     private fun defaultSubLabCredit() {

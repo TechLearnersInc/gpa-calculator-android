@@ -1,9 +1,10 @@
-package com.cgpacalc
+package com.gpacalc
 
 import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import android.util.Log
 import android.widget.Toast
 
 
@@ -78,6 +79,19 @@ class DbManager(context: Context, version: Int) {
         }
         result.close()
         return data
+    }
+
+    fun getPoint(value: String) : Double {
+        var point: Double? = null
+        val query: String = "SELECT $colGPA FROM $dbTable WHERE $colGrade='$value'"
+        val result = sqlDB!!.rawQuery(query, null)
+        if (result.moveToFirst()) {
+            do {
+                point = result.getString(result.getColumnIndex(colGPA)).toDouble()
+            } while (result.moveToNext())
+        }
+        result.close()
+        return point!!
     }
 
     fun updateData(grade: String, gpa: String) {

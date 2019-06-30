@@ -1,4 +1,4 @@
-package com.cgpacalc
+package com.gpacalc
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -9,11 +9,11 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import kotlinx.android.synthetic.main.grade_listview_ticket.view.*
 
-open class CreditListViewAdaptar(thisContext: Context) : BaseAdapter() {
+open class GradeListViewAdaptar(thisContext: Context) : BaseAdapter() {
 
     private var context: Context = thisContext
     var dbManager: DbManager? = null
-    var listOfCredit: MutableList<HashMap<String, Float>>? = null
+    var listOfGrade: MutableList<HashMap<String, Float>>? = null
 
     init {
         this.refreshDatabase()
@@ -24,12 +24,12 @@ open class CreditListViewAdaptar(thisContext: Context) : BaseAdapter() {
         val inflator: LayoutInflater = this.context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
         val myview: View = inflator.inflate(R.layout.grade_listview_ticket, null)
 
-        val gradeList: HashMap<String, Float> = this.listOfCredit!![position]
-        val name: String = gradeList.keys.toString().substring(1, gradeList.keys.toString().length - 1)
-        val credit: String = gradeList.values.toString().substring(1, gradeList.values.toString().length - 1)
+        val gradeList: HashMap<String, Float> = this.listOfGrade!![position]
+        val grade: String = gradeList.keys.toString().substring(1, gradeList.keys.toString().length - 1)
+        val gpa: String = gradeList.values.toString().substring(1, gradeList.values.toString().length - 1)
 
-        myview.gradeTextView.text = name
-        myview.gpaEditText.text = credit
+        myview.gradeTextView.text = grade
+        myview.gpaEditText.text = gpa
 
         myview.setBackgroundColor(
             when (position % 2) {
@@ -42,7 +42,7 @@ open class CreditListViewAdaptar(thisContext: Context) : BaseAdapter() {
     }
 
     override fun getItem(position: Int): Any {
-        return this.listOfCredit!![position]
+        return this.listOfGrade!![position]
     }
 
     override fun getItemId(position: Int): Long {
@@ -50,12 +50,12 @@ open class CreditListViewAdaptar(thisContext: Context) : BaseAdapter() {
     }
 
     override fun getCount(): Int {
-        return this.listOfCredit!!.size
+        return this.listOfGrade!!.size
     }
 
     open fun refreshDatabase() {
         // Database
         this.dbManager = DbManager(this.context, MainActivity().dbVersion)
-        this.listOfCredit = this.dbManager!!.readDataToList(false).asReversed()
+        this.listOfGrade = this.dbManager!!.readDataToList(true)
     }
 }
