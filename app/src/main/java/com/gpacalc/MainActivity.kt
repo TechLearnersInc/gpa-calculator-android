@@ -2,16 +2,19 @@ package com.gpacalc
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
+import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuItem
 import android.view.WindowManager
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
-import java.lang.NullPointerException
+import kotlinx.android.synthetic.main.show_gpa.view.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -53,7 +56,7 @@ class MainActivity : AppCompatActivity() {
             R.id.actionEditSheet -> startActivity(Intent(this@MainActivity, EditSheetActivity::class.java))
             R.id.actionAbout -> startActivity(Intent(this@MainActivity, AboutActivity::class.java))
             R.id.actionExit -> {
-                val builder = AlertDialog.Builder(this)
+                val builder = AlertDialog.Builder(this@MainActivity)
                 builder.setMessage("Are you sure to exit?")
                 builder.setCancelable(true)
                 builder.setNegativeButton("NO") { dialogInterface, _ -> dialogInterface.cancel() }
@@ -130,6 +133,20 @@ class MainActivity : AppCompatActivity() {
             val x = Calculator(this@MainActivity, this.subjectListViewAdaptar!!.listOfSubjects)
             Log.i("FARIA", x.calculate().toString())
             Toast.makeText(this@MainActivity, x.calculate().toString(), Toast.LENGTH_LONG).show()
+            //
+            val builder = AlertDialog.Builder(this@MainActivity)
+            builder.setCancelable(true)
+            //
+            val view = LayoutInflater.from(this@MainActivity).inflate(R.layout.show_gpa, null)
+            view.GPA.text = x.calculate().toString()
+            builder.setView(view)
+            //
+            val dialogue = builder.create()
+            dialogue.show()
+            dialogue.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+
+            //
         } catch (e: NullPointerException) {
             Toast.makeText(this@MainActivity, "Unable to calculate", Toast.LENGTH_LONG).show()
         }

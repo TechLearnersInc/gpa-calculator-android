@@ -11,4 +11,5 @@
     <color name="textColorLight">#616161</color>
     <color name="listViewColorA">#FAFAFA</color>
     <color name="listViewColorB">#F5F5F5</color>
+    <color name="gpaColor">#F3E5F5</color>
 </resources>

@@ -1,8 +1,6 @@
 package com.gpacalc
 
 import android.content.Context
-import kotlin.math.round
-import kotlin.math.roundToLong
 
 class Calculator(thisContext: Context, table: MutableList<List<String>>) {
 

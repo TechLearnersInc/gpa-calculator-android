@@ -13,7 +13,7 @@ class SplashScreen : AppCompatActivity() {
         val mainActivity = object : Thread() {
             override fun run() {
                 try {
-                    sleep(2000)
+                    sleep(500)
                     startActivity(Intent(baseContext, MainActivity::class.java))
                     finish()
                 } catch (e: Exception) {
