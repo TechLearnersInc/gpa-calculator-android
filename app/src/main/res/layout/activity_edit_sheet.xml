@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".EditSheetActivity">
+
+    <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="5dp"
+            tools:ignore="MissingConstraints,UseCompoundDrawables"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+                android:layout_width="96dp"
+                android:layout_height="90dp"
+                android:background="@drawable/edit_icon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:id="@+id/imageView4"
+                tools:ignore="ContentDescription"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:paddingStart="15dp"
+                android:textSize="18sp"
+                android:textColor="@color/textColor"
+                android:text="@string/editSheetHelpText"
+                tools:ignore="RtlHardcoded,RtlSymmetry"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="MissingConstraints"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+            android:id="@+id/linearLayout4"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout2">
+
+        <ListView android:id="@+id/CreditListView"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="MissingConstraints"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/linearLayout2"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
+
+        <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/gradeLabel"
+                android:textStyle="bold"
+                android:textColor="@color/gradeListViewLabelColor"
+                android:textSize="26sp"
+                android:focusable="false"
+                android:ems="10"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:layout_weight="1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+                tools:ignore="Autofill,LabelFor,TextFields,UnusedAttribute"/>
+
+        <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/gpaLabel"
+                android:textStyle="bold"
+                android:textColor="@color/gradeListViewLabelColor"
+                android:textSize="26sp"
+                android:focusable="false"
+                android:ems="10"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:layout_weight="1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+                tools:ignore="Autofill,LabelFor,TextFields,UnusedAttribute"/>
+
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="0dp"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintEnd_toEndOf="parent"
+                  app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+                  android:id="@+id/linearLayout3"
+                  app:layout_constraintBottom_toBottomOf="parent">
+        <ListView android:id="@+id/GradeListView"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  tools:ignore="MissingConstraints"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintEnd_toEndOf="parent"
+                  app:layout_constraintHorizontal_bias="0.0"
+                  app:layout_constraintTop_toBottomOf="@+id/linearLayout2"/>
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
+

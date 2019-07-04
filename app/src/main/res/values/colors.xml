@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#1976D2</color>
+    <color name="colorPrimaryDark">#004BA0</color>
+    <color name="colorAccent">#004BA0</color>
+    <color name="buttonTextColor">#F3E5F5</color>
+    <color name="navBarColor">#020107</color>
+    <color name="gradeListViewLabelColor">#01579B</color>
+    <color name="rippleColor">#90CAF9</color>
+    <color name="textColor">#424242</color>
+    <color name="textColorLight">#616161</color>
+    <color name="listViewColorA">#FAFAFA</color>
+    <color name="listViewColorB">#F5F5F5</color>
+    <color name="gpaColor">#F3E5F5</color>
+</resources>
