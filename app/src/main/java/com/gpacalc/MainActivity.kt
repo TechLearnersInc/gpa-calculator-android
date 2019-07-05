@@ -14,7 +14,7 @@ import android.view.MenuItem
 import android.view.WindowManager
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.show_gpa.view.*
+import kotlinx.android.synthetic.main.gpa_dialogue.view.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -42,6 +42,9 @@ class MainActivity : AppCompatActivity() {
 
         // Hide Keyboard when activity starts
         window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN)
+
+        //
+        this.calculateButton.performClick()
     }
 
     // Adding three dot navigation menu to this activity
@@ -129,29 +132,27 @@ class MainActivity : AppCompatActivity() {
     }
 
     @SuppressLint("InflateParams")
-    private fun calculateBtnAction() {
-        try {
-            val x = Calculator(this@MainActivity, this.subjectListViewAdaptar!!.listOfSubjects)
-            Log.i("FARIA", x.calculate())
-            Toast.makeText(this@MainActivity, x.calculate(), Toast.LENGTH_LONG).show()
-            //
-            val builder = AlertDialog.Builder(this@MainActivity)
-            builder.setCancelable(true)
-            //
-            val view = LayoutInflater.from(this@MainActivity).inflate(R.layout.show_gpa, null)
-            view.GPA.text = x.calculate()
-            builder.setView(view)
-            //
-            val dialogue = builder.create()
-            dialogue.show()
-            dialogue.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+    private fun calculateBtnAction() = try {
+        val x = Calculator(this@MainActivity, this.subjectListViewAdaptar!!.listOfSubjects)
+        Log.i("FARIA", x.calculate())
+        Toast.makeText(this@MainActivity, x.calculate(), Toast.LENGTH_LONG).show()
+        //
+        val builder = AlertDialog.Builder(this@MainActivity)
+        builder.setCancelable(true)
+        //
+        val view = LayoutInflater.from(this@MainActivity).inflate(R.layout.gpa_dialogue, null)
+        builder.setView(view)
+        //
+        val dialogue = builder.create()
+        view.GPA.text = x.calculate()
+        view.closeBtn.setOnClickListener { dialogue.dismiss() }
+        dialogue.show()
+        dialogue.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
 
-            //
-        } catch (e: NullPointerException) {
-            Toast.makeText(this@MainActivity, "Unable to calculate", Toast.LENGTH_LONG).show()
-        }
-
+        //
+    } catch (e: NullPointerException) {
+        Toast.makeText(this@MainActivity, "Unable to calculate", Toast.LENGTH_LONG).show()
     }
 
     private fun defaultSubLabCredit() {
