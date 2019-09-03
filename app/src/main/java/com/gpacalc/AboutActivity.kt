@@ -15,11 +15,6 @@ class AboutActivity : AppCompatActivity() {
         window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN)
 
 
-        button5.setOnClickListener {
-
-        }
-
-
 
 
     }

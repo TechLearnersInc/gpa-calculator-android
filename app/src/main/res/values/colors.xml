@@ -12,6 +12,7 @@
     <color name="listViewColorA">#FAFAFA</color>
     <color name="listViewColorB">#F5F5F5</color>
     <color name="gpaColor">#F3E5F5</color>
+    <color name="aboutLabelColor">#424242</color>
     <color name="gpaDialogueRippleColor">#D84315</color>
     <color name="gpaDialogueShapeColor">#FFFDE7</color>
     <color name="gpaDialogueStrokeColor">#E6F0B14E</color>

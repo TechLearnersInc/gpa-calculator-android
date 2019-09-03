@@ -20,4 +20,6 @@
     <string name="labInputLabel">LAB</string>
     <string name="refresh_menu_item">Refresh</string>
     <string name="closeButtonLabel">Close</string>
+    <string name="version">Version: 1.0</string>
+    <string name="license">License: MIT</string>
 </resources>
