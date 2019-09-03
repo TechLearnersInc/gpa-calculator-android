@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
         window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN)
 
         //
-        this.calculateButton.performClick()
+        // this.calculateButton.performClick()
     }
 
     // Adding three dot navigation menu to this activity
