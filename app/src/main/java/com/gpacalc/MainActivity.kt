@@ -44,8 +44,11 @@ class MainActivity : AppCompatActivity() {
         window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN)
 
         //
+        Toast.makeText(applicationContext, "Test Version", Toast.LENGTH_LONG).show()
+
+        //
         // this.calculateButton.performClick()
-        startActivity(Intent(this@MainActivity, AboutActivity::class.java))
+        // startActivity(Intent(this@MainActivity, AboutActivity::class.java))
     }
 
     // Adding three dot navigation menu to this activity

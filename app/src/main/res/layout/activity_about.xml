@@ -14,7 +14,8 @@
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
             android:id="@+id/constraintLayout3"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginBottom="24dp" app:layout_constraintBottom_toTopOf="@+id/scrollView2">
+            android:layout_marginBottom="8dp" app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+            android:layout_marginTop="16dp">
 
         <TextView
                 android:layout_width="wrap_content"
@@ -63,7 +64,7 @@
             android:layout_height="0dp"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
             android:id="@+id/scrollView2"
-            android:layout_marginTop="24dp" app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"
+            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"
             app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="8dp">
         <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
                       android:orientation="vertical">
@@ -74,11 +75,65 @@
                 <LinearLayout
                         android:orientation="vertical"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" app:layout_constraintStart_toStartOf="parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/linearLayout9" android:layout_marginTop="8dp"
+                        android:id="@+id/linearLayout9" android:layout_marginStart="8dp" android:layout_marginEnd="8dp"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp" app:layout_constraintBottom_toTopOf="@+id/linearLayout12">
+
+                    <TextView
+                            android:text="@string/director"
+                            android:textSize="20sp"
+                            android:textColor="@color/aboutLabelColor"
+                            android:layout_width="wrap_content"
+                            android:ems="10"
+                            android:layout_height="wrap_content" android:id="@+id/textView"/>
+                    <TextView
+                            android:text="@string/directorEmail"
+                            android:textSize="20sp"
+                            android:textColor="@color/aboutLabelColor"
+                            android:layout_width="match_parent"
+                            android:ems="10"
+                            android:layout_height="wrap_content" android:id="@+id/textView4"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp" app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginEnd="8dp"
+                        android:id="@+id/linearLayout12"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintTop_toBottomOf="@+id/linearLayout9" android:layout_marginBottom="8dp"
+                        app:layout_constraintBottom_toTopOf="@+id/linearLayout10">
+                    <TextView
+                            android:text="@string/developer"
+                            android:textSize="20sp"
+                            android:textColor="@color/aboutLabelColor"
+                            android:layout_width="match_parent"
+                            android:ems="10"
+                            android:layout_height="wrap_content" android:id="@+id/textView2"/>
+                    <TextView
+                            android:text="@string/developerEmail"
+                            android:textSize="20sp"
+                            android:textColor="@color/aboutLabelColor"
+                            android:layout_width="match_parent"
+                            android:ems="10"
+                            android:layout_height="wrap_content" android:id="@+id/textView3"/>
+                </LinearLayout>
+                <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="57dp" app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
                         android:layout_marginStart="8dp" android:layout_marginEnd="8dp"
-                        android:id="@+id/linearLayout10" android:layout_marginBottom="8dp"
+                        android:id="@+id/linearLayout10"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintTop_toBottomOf="@+id/linearLayout12" android:layout_marginBottom="145dp"
                         app:layout_constraintBottom_toTopOf="@+id/linearLayout11">
                     <TextView
                             android:text="@string/logoContributor"
@@ -98,37 +153,12 @@
                         android:orientation="vertical"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        android:id="@+id/linearLayout9" android:layout_marginStart="8dp" android:layout_marginEnd="8dp"
-                        android:layout_marginTop="8dp" android:layout_marginBottom="8dp"
-                        app:layout_constraintBottom_toTopOf="@+id/linearLayout10">
-
-                    <TextView
-                            android:text="@string/developer"
-                            android:textSize="20sp"
-                            android:textColor="@color/aboutLabelColor"
-                            android:layout_width="wrap_content"
-                            android:ems="10"
-                            android:layout_height="wrap_content" android:id="@+id/textView"/>
-                    <TextView
-                            android:text="@string/developerEmail"
-                            android:textSize="20sp"
-                            android:textColor="@color/aboutLabelColor"
-                            android:layout_width="match_parent"
-                            android:ems="10"
-                            android:layout_height="wrap_content" android:id="@+id/textView4"/>
-
-                </LinearLayout>
-                <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
                         app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
                         app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-                        app:layout_constraintTop_toBottomOf="@+id/linearLayout10" android:layout_marginTop="8dp"
-                        android:id="@+id/linearLayout11" android:layout_marginBottom="8dp"
-                        app:layout_constraintBottom_toBottomOf="parent">
+                        android:id="@+id/linearLayout11"
+                        app:layout_constraintHorizontal_bias="1.0" android:layout_marginTop="8dp"
+                        app:layout_constraintTop_toBottomOf="@+id/linearLayout10"
+                >
                     <TextView
                             android:text="@string/testerInfo"
                             android:textSize="20sp"
