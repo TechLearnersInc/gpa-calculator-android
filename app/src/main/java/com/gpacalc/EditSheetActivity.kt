@@ -24,9 +24,6 @@ class EditSheetActivity : AppCompatActivity() {
         // Grade Sheet Handler
         this.gradeListViewHandler()
 
-        // Credit Sheet Handler
-        this.creditListViewHandler()
-
         // Hide Keyboard when activity starts
         window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN)
     }
@@ -102,56 +99,6 @@ class EditSheetActivity : AppCompatActivity() {
                                     inputView.gpaInputDialogue.text.toString().trim()
                                 )
                                 this.adaptarGrade!!.notifyDataSetChanged()
-                                Toast.makeText(this@EditSheetActivity, "Success", Toast.LENGTH_LONG).show()
-                            } else {
-                                Toast.makeText(this@EditSheetActivity, "No change", Toast.LENGTH_LONG).show()
-                            }
-                        } catch (e: NumberFormatException) {
-                            e.printStackTrace()
-                            Toast.makeText(this@EditSheetActivity, "Wrong input", Toast.LENGTH_LONG).show()
-                        }
-                    }
-                }
-                inputDialogue.show()
-            }
-        }
-    }
-
-    // Credit Sheet Handler
-    @SuppressLint("InflateParams")
-    private fun creditListViewHandler() {
-        this.adaptarCredit = CreditListViewAdaptar(this@EditSheetActivity)
-        this.CreditListView.adapter = this.adaptarCredit
-
-        @Suppress("UsePropertyAccessSyntax")
-        this.CreditListView.setOnItemClickListener { _, _, position, _ ->
-            run {
-                val inputView = LayoutInflater.from(this@EditSheetActivity).inflate(R.layout.gpa_input_dialogue, null)
-
-                val gradeList = this.adaptarCredit!!.listOfCredit!![position]
-                val grade: String = gradeList.keys.toString().substring(1, gradeList.keys.toString().length - 1)
-                val gpa: String = gradeList.values.toString().substring(1, gradeList.values.toString().length - 1)
-
-                inputView.gradeInputDialogue.text = grade
-                inputView.gpaInputDialogue.setText(gpa)
-
-                val inputDialogue = AlertDialog.Builder(this@EditSheetActivity)
-                inputDialogue.setTitle("Edit GPA")
-                inputDialogue.setView(inputView)
-                inputDialogue.setCancelable(true)
-                inputDialogue.setNegativeButton("Cancel") { dialogInterface, _ -> dialogInterface.cancel() }
-                inputDialogue.setPositiveButton("Ok") { _, _ ->
-                    run {
-                        try {
-                            val tmp: String = inputView.gpaInputDialogue.text.toString()
-                            if (gpa != tmp) {
-                                this.adaptarCredit!!.listOfCredit!![position][grade] =
-                                    inputView.gpaInputDialogue.text.toString().trim().toFloat()
-                                this.adaptarCredit!!.dbManager!!.updateData(
-                                    inputView.gradeInputDialogue.text.toString(),
-                                    inputView.gpaInputDialogue.text.toString().trim()
-                                )
-                                this.adaptarCredit!!.notifyDataSetChanged()
                                 Toast.makeText(this@EditSheetActivity, "Success", Toast.LENGTH_LONG).show()
                             } else {
                                 Toast.makeText(this@EditSheetActivity, "No change", Toast.LENGTH_LONG).show()
