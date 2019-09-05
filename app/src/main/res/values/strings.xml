@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+
 <resources>
     <string name="app_name">GPA Calculator</string>
     <string name="about_activity_label">About</string>
@@ -22,4 +24,17 @@
     <string name="closeButtonLabel">Close</string>
     <string name="version">Version: 1.0</string>
     <string name="license">License: MIT</string>
+    <string name="developer"><b>Developer:</b> Rizwan Hasan</string>
+    <string name="logoContributor"><b>Logo contributor:</b> Md. Raihan Chowdhoury</string>
+    <string name="logoContributorEmail"><b>Email:</b> raihan.chowdhoury.raju@gmail.com</string>
+    <string name="developerEmail"><b>Email:</b> rizwan.hasan486@gmail.com</string>
+    <string name="testerInfo"><b>Thanks to our tester contributor\'s:</b>
+        \n\t\t Blah
+        \n\t\t Blah
+        \n\t\t Blah
+        \n\t\t Blah
+        \n\t\t Blah
+        \n\t\t Blah
+        \n\t\t Blah
+    </string>
 </resources>

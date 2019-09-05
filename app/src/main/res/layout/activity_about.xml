@@ -81,13 +81,13 @@
                         android:id="@+id/linearLayout10" android:layout_marginBottom="8dp"
                         app:layout_constraintBottom_toTopOf="@+id/linearLayout11">
                     <TextView
-                            android:text="Logo contributor:  Md. Raihan Chowdhoury "
+                            android:text="@string/logoContributor"
                             android:textSize="20sp"
                             android:textColor="@color/aboutLabelColor"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" android:id="@+id/textView11"/>
                     <TextView
-                            android:text="Email:  raihan.chowdhoury.raju@gmail.com"
+                            android:text="@string/logoContributorEmail"
                             android:textSize="20sp"
                             android:textColor="@color/aboutLabelColor"
 
@@ -105,14 +105,14 @@
                         app:layout_constraintBottom_toTopOf="@+id/linearLayout10">
 
                     <TextView
-                            android:text="Developer:  Rizwan Hasan"
+                            android:text="@string/developer"
                             android:textSize="20sp"
                             android:textColor="@color/aboutLabelColor"
                             android:layout_width="wrap_content"
                             android:ems="10"
                             android:layout_height="wrap_content" android:id="@+id/textView"/>
                     <TextView
-                            android:text="Email:  rizwan.hasan486@gmail.com"
+                            android:text="@string/developerEmail"
                             android:textSize="20sp"
                             android:textColor="@color/aboutLabelColor"
                             android:layout_width="match_parent"
@@ -130,7 +130,7 @@
                         android:id="@+id/linearLayout11" android:layout_marginBottom="8dp"
                         app:layout_constraintBottom_toBottomOf="parent">
                     <TextView
-                            android:text="Thanks to our tester contributor's:\n\t\t Sakib Khan Inan \n\t\t Alex \n\t\t Blah \n\t\t Blah \n\t\t Blah \n\t\t Blah \n\t\t Blah \n\t\t Blah"
+                            android:text="@string/testerInfo"
                             android:textSize="20sp"
                             android:textColor="@color/aboutLabelColor"
                             android:layout_width="wrap_content"

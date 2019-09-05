@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
 
         //
         // this.calculateButton.performClick()
-        // startActivity(Intent(this@MainActivity, AboutActivity::class.java))
+        startActivity(Intent(this@MainActivity, AboutActivity::class.java))
     }
 
     // Adding three dot navigation menu to this activity
