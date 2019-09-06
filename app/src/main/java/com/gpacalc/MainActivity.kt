@@ -46,8 +46,6 @@ class MainActivity : AppCompatActivity() {
         //
         Toast.makeText(applicationContext, "Test Version", Toast.LENGTH_LONG).show()
 
-        //
-        // this.calculateButton.performClick()
         // startActivity(Intent(this@MainActivity, AboutActivity::class.java))
     }
 

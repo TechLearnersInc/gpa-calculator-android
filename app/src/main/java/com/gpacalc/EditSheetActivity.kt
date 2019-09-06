@@ -12,10 +12,7 @@ import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_edit_sheet.*
 import kotlinx.android.synthetic.main.gpa_input_dialogue.view.*
 
-class EditSheetActivity : AppCompatActivity() {
-
-    private var adaptarGrade: GradeListViewAdaptar? = null
-    private var adaptarCredit: CreditListViewAdaptar? = null
+class EditSheetActivity(private var adaptarGrade: GradeListViewAdaptar? = null) : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -83,7 +80,7 @@ class EditSheetActivity : AppCompatActivity() {
                 inputView.gpaInputDialogue.setText(gpa)
 
                 val inputDialogue = AlertDialog.Builder(this@EditSheetActivity)
-                inputDialogue.setTitle("Edit GPA")
+                inputDialogue.setTitle("Edit Grade Point")
                 inputDialogue.setView(inputView)
                 inputDialogue.setCancelable(true)
                 inputDialogue.setNegativeButton("Cancel") { dialogInterface, _ -> dialogInterface.cancel() }
@@ -99,7 +96,7 @@ class EditSheetActivity : AppCompatActivity() {
                                     inputView.gpaInputDialogue.text.toString().trim()
                                 )
                                 this.adaptarGrade!!.notifyDataSetChanged()
-                                Toast.makeText(this@EditSheetActivity, "Success", Toast.LENGTH_LONG).show()
+                                Toast.makeText(this@EditSheetActivity, "Done", Toast.LENGTH_LONG).show()
                             } else {
                                 Toast.makeText(this@EditSheetActivity, "No change", Toast.LENGTH_LONG).show()
                             }
