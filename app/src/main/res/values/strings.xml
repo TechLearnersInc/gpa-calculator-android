@@ -26,18 +26,17 @@
     <string name="license">License: MIT</string>
     <string name="director"><b>Project Director: </b> Sakib Khan Inan</string>
     <string name="directorEmail"><b>Email:</b> sakib.khaninan@hotmail.com</string>
-    <string name="developer"><b>Developer:</b> Rizwan Hasan</string>
+    <string name="developer"><b>Project Developer:</b> Rizwan Hasan</string>
     <string name="developerEmail"><b>Email:</b> rizwan.hasan486@gmail.com</string>
     <string name="logoContributor"><b>Logo Designer:</b> Md. Raihan Chowdhoury</string>
     <string name="logoContributorEmail"><b>Email:</b> raihan.chowdhoury.raju@gmail.com</string>
     <string name="testerInfo"><b>Thanks to our testing team:</b>
-        \n\t\t A
-        \n\t\t B
-        \n\t\t C
-        \n\t\t D
-        \n\t\t E
-        \n\t\t F
-        \n\t\t G
+        \n\t\t Asmita Das Gupta
+        \n\t\t Mahmudul Islam
+        \n\t\t Rubaiath-E-Ulfath
+        \n\t\t Sal-sabil Rahat
+        \n\t\t Shaon Indrajit Barua
+        \n\t\t Syed Mohammed Farhan
     </string>
     <string name="communityName">Magpie-Robins</string>
 </resources>

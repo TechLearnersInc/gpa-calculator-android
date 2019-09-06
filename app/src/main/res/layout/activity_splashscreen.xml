@@ -10,13 +10,14 @@
         android:background="@color/splashBackground"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".SplashScreen" android:id="@+id/linearLayout13">
+        tools:context=".SplashScreen"
+        android:id="@+id/linearLayout13">
 
     <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/about_icon"
-            android:id="@+id/imageView"
+            android:id="@+id/splashLogo"
             tools:ignore="ContentDescription"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -28,9 +29,9 @@
             android:textSize="22sp"
             android:fontFamily="sans-serif-medium"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/textView5"
+            android:layout_height="wrap_content" android:id="@+id/organizationName"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/splashLogo"
             android:layout_marginBottom="100dp" app:layout_constraintBottom_toBottomOf="parent"/>
 </android.support.constraint.ConstraintLayout>

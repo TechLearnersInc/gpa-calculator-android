@@ -42,11 +42,6 @@ class MainActivity : AppCompatActivity() {
 
         // Hide Keyboard when activity starts
         window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN)
-
-        //
-        Toast.makeText(applicationContext, "Test Version", Toast.LENGTH_LONG).show()
-
-        // startActivity(Intent(this@MainActivity, AboutActivity::class.java))
     }
 
     // Adding three dot navigation menu to this activity

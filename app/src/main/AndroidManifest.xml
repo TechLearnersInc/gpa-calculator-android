@@ -10,7 +10,7 @@
             android:roundIcon="@mipmap/app_icon_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
-            tools:ignore="GoogleAppIndexingWarning">
+            tools:ignore="AllowBackup,GoogleAppIndexingWarning">
 
         <!-- SplashScreen Activity -->
         <activity
