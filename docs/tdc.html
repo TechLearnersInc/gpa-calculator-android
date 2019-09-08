@@ -1,22 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Total Download</title>
-</head>
-<body>
-<p style="font-size:1000%" align="center" id="download"></p>
-<script type="text/javascript">
-    let request;
-    let url = 'https://api.github.com/repos/magpie-robins/gpa-calculator-android/releases/latest'
-    request = new XMLHttpRequest();
-    request.open('GET', url, true);
-    request.onload = function () {
-        let users = JSON.parse(this.response);
-        let output = users['assets'][0]["download_count"];
-        console.log(output);
-        document.getElementById('download').innerHTML = output;
-    };
-    request.send();
-</script>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <title>Total Download</title>
+
+    </head>
+    <body>
+        <p style="font-size: 500%" align="center">Total Downloads:</p>
+        <p style="font-size:1000%" align="center" id="download"></p>
+        <script type="text/javascript">
+            let request;
+            let url = 'https://api.github.com/repos/magpie-robins/gpa-calculator-android/releases/latest'
+            request = new XMLHttpRequest();
+            request.open('GET', url, true);
+            request.onload = function () {
+                let users = JSON.parse(this.response);
+                let output = users['assets'][0]["download_count"];
+                console.log(output);
+                document.getElementById('download').innerHTML = output;
+            };
+            request.send();
+    
+        </script>
+
+    </body>
+    
+</html>
